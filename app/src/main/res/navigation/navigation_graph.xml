@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/user_page">
+
+    <fragment
+        android:id="@+id/user_page"
+        android:name="com.gunay.bulutchat.User_page"
+        android:label="fragment_user_page"
+        tools:layout="@layout/fragment_user_page" >
+        <action
+            android:id="@+id/action_user_page_to_user_register"
+            app:destination="@id/user_register" />
+        <action
+            android:id="@+id/action_user_page_to_user_chat"
+            app:destination="@id/user_chat" />
+    </fragment>
+    <fragment
+        android:id="@+id/user_register"
+        android:name="com.gunay.bulutchat.User_register"
+        android:label="fragment_user_register"
+        tools:layout="@layout/fragment_user_register" >
+        <action
+            android:id="@+id/action_user_register_to_user_page"
+            app:destination="@id/user_page" />
+        <action
+            android:id="@+id/action_user_register_to_user_chat"
+            app:destination="@id/user_chat" />
+    </fragment>
+    <fragment
+        android:id="@+id/user_chat"
+        android:name="com.gunay.bulutchat.User_chat"
+        android:label="fragment_user_chat"
+        tools:layout="@layout/fragment_user_chat" >
+        <action
+            android:id="@+id/action_user_chat_to_user_page"
+            app:destination="@id/user_page" />
+    </fragment>
+</navigation>
